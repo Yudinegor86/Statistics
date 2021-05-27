@@ -10,8 +10,7 @@ public class StatsService {
     }
 
     public int averageSales(int[] sales) {   //Среднюю сумму продаж в месяц
-        int averageSales = sumAllSales(sales) / sales.length;
-        return averageSales;
+        return sumAllSales(sales) / sales.length;
 
     }
 
@@ -42,9 +41,9 @@ public class StatsService {
     public int monthsBelowAverageSales(int[] sales) {  //Кол-во месяцев, в которых продажи были ниже среднего
         int belowAvgMonth = 0;
         int month = 0;
-        int averageSales = sumAllSales(sales) / sales.length;
+        //int averageSales = sumAllSales(sales) / sales.length;
         for (int sale : sales) {
-            if (sale < averageSales) {
+            if (sale < averageSales(sales)) {
                 belowAvgMonth += 1;
             }
             month = month + 1;
@@ -55,9 +54,8 @@ public class StatsService {
     public int monthsAboveAverageSales(int[] sales) {   //Кол-во месяцев, в которых продажи были выше среднего
         int aboveAvgMonth = 0;
         int month = 0;
-        int averageSales = sumAllSales(sales) / sales.length;
         for (int sale : sales) {
-            if (sale > averageSales) {
+            if (sale > averageSales(sales)/) {
                 aboveAvgMonth += 1;
             }
             month = month + 1;
